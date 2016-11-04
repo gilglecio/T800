@@ -21,17 +21,20 @@ void SmartCar::forward() {
 	_motor2.cw();
 }
 
-void SmartCar::backward() {
+void SmartCar::backward(int timer) {
 	_motor1.ccw();
 	_motor2.ccw();
+	delay(timer);
 }
 
-void SmartCar::toTheLeft() {
+void SmartCar::toTheLeft(int timer) {
 	_motor1.cw();
 	_motor2.ccw();
+	delay(timer);
 }
 
-void SmartCar::toTheRight() {
+void SmartCar::toTheRight(int timer) {
 	_motor1.ccw();
 	_motor2.cw();
+	delay(timer);
 }

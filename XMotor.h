@@ -5,9 +5,7 @@
 
 class XMotor {
     private:
-        int _speed_pin;
-        int _in1_pin;
-        int _in2_pin;
+        int _speed_pin, _in1_pin, _in2_pin;
     public:
         XMotor(int speed_pin, int in1_pin, int in2_pin);
         void setSpeed(int speed);
