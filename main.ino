@@ -7,12 +7,15 @@
 #include <Buzzer.h>
 
 ThreadController ctrl = ThreadController();
+
 Thread Actuators      = Thread();
 Thread Sensors        = Thread();
 
-Ultrasonic Sensor(11, 12);
-XMotor     M1(6, 4 ,7);
-XMotor     M2(5, 2, 3);
+Ultrasonic Sensor(3, 4);
+
+XMotor     M1(10, 9 ,8);
+XMotor     M2(11, 13, 12);
+
 Buzzer     Bip(A2, A5);
 SmartCar   Car(M1, M2);
 
