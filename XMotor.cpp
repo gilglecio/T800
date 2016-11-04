@@ -16,7 +16,7 @@ void XMotor::setSpeed(int speed) {
     _speed_pin = speed;
 }
 
-void XMotor::breakMotor() {
+void XMotor::stop() {
     digitalWrite(_in1_pin, HIGH);
     digitalWrite(_in2_pin, HIGH);
 }

@@ -6,9 +6,14 @@ SmartCar::SmartCar(XMotor _motor1, XMotor _motor2): _motor1(_motor1), _motor2(_m
 	_motor2 = _motor2;
 }
 
-void SmartCar::breakCar() {
-	_motor1.breakMotor();
-	_motor2.breakMotor();
+void SmartCar::setSpeed(int speed_m1, int speed_m2) {
+	_motor1.setSpeed(speed_m1);
+	_motor2.setSpeed(speed_m2);
+}
+
+void SmartCar::stop() {
+	_motor1.stop();
+	_motor2.stop();
 }
 
 void SmartCar::forward() {

@@ -11,7 +11,7 @@ class XMotor {
     public:
         XMotor(int speed_pin, int in1_pin, int in2_pin);
         void setSpeed(int speed);
-        void breakMotor();
+        void stop();
         void cw();
         void ccw();
 };

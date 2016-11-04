@@ -10,11 +10,12 @@ class SmartCar {
 	    XMotor _motor2;
   	public:
 	    SmartCar(XMotor _motor1, XMotor _motor2);
+	    void setSpeed(int speed_m1, int speed_m2);
 	    void forward();
 	    void backward();
 	    void toTheLeft();
 	    void toTheRight();
-	    void breakCar();
+	    void stop();
 };
 
 #endif
