@@ -1,10 +1,7 @@
-#include <Arduino.h>;
-#include <Buzzer.h>;
+#include <Arduino.h>
+#include <Buzzer.h>
 
-Buzzer::Buzzer(int _vcc, int _gnd) {
-
-    _vcc = _vcc;
-    _gnd = _gnd;
+Buzzer::Buzzer(uint8_t vcc, uint8_t gnd): _vcc(vcc), _gnd(gnd) {
 
     pinMode(_vcc, OUTPUT);
     pinMode(_gnd, OUTPUT);

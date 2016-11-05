@@ -11,32 +11,24 @@ ThreadController ctrl = ThreadController();
 Thread Actuators      = Thread();
 Thread Sensors        = Thread();
 
-Ultrasonic Sensor(3, 4);
+Ultrasonic Sensor(4, 3);
 
-XMotor     M1(10, 9 ,8);
-XMotor     M2(11, 13, 12);
+XMotor M1(10, 9 ,8);
+XMotor M2(11, 13, 12);
 
-Buzzer     Bip(A2, A5);
-SmartCar   Car(M1, M2);
+SmartCar Car(M1, M2);
+
+Buzzer Bip(A4, A1);
 
 int distance;
 
 void actuatorCall() {
 
-    Car.setSpeed(150, 150);
+    Car.speed(150, 150);
     Car.forward();
-    
-    if(distance < 60){
-        Bip.bip();
-    }
-
-    if(distance < 40){
-        Car.setSpeed(100, 150);
-    }
 
     if (distance < 15) {
-        Car.setSpeed(150, 150);
-        Car.stop();
+        Bip.bip();
         Car.backward(300);
         Car.toTheLeft(300);
     }
@@ -49,9 +41,11 @@ void sensorCall() {
 void setup () {
 
     Car.stop();
+
+    Serial.begin(9600);
     
     Sensors.onRun(sensorCall);
-    Sensors.setInterval(100);
+    Sensors.setInterval(50);
 
     Actuators.onRun(actuatorCall);
     Actuators.setInterval(100);
@@ -61,8 +55,7 @@ void setup () {
 }
 
 float getDistance() {
-    float cmMsec = Sensor.convert(Sensor.timing(), Ultrasonic::CM);
-    return cmMsec;
+    return Sensor.convert(Sensor.timing(), Ultrasonic::CM);
 }
 
 void loop () {

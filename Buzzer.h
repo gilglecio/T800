@@ -5,9 +5,9 @@
 
 class Buzzer {
     private:
-        int _vcc, _gnd;
+        uint8_t _vcc, _gnd;
     public:
-        Buzzer(int _vcc, int _gnd);
+        Buzzer(uint8_t vcc, uint8_t gnd);
         void bip();
 };
 

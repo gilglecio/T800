@@ -1,19 +1,14 @@
-#include <Arduino.h>;
-#include <XMotor.h>;
+#include <Arduino.h>
+#include <XMotor.h>
 
-XMotor::XMotor(int _speed_pin, int _in1_pin, int _in2_pin) {
-  
-    _speed_pin = _speed_pin;
-    _in1_pin = _in1_pin;
-    _in2_pin = _in2_pin;
-
+XMotor::XMotor(uint8_t speed_pin, uint8_t in1_pin, uint8_t in2_pin): _speed_pin(speed_pin), _in1_pin(in1_pin), _in2_pin(in2_pin) {
     pinMode(_speed_pin, OUTPUT);
     pinMode(_in1_pin, OUTPUT);
     pinMode(_in2_pin, OUTPUT);
 }
 
-void XMotor::setSpeed(int speed) {
-    _speed_pin = speed;
+void XMotor::speed(int speed) {
+    analogWrite(_speed_pin, speed);
 }
 
 void XMotor::stop() {

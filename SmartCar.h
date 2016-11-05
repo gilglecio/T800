@@ -6,10 +6,10 @@
 
 class SmartCar {
 	private:
-	    XMotor _motor1, _motor2;
+	    XMotor _m1, _m2;
   	public:
-	    SmartCar(XMotor _motor1, XMotor _motor2);
-	    void setSpeed(int speed_m1, int speed_m2);
+	    SmartCar(XMotor m1, XMotor m2);
+	    void speed(int speed_m1, int speed_m2);
 	    void forward();
 	    void backward(int timer);
 	    void toTheLeft(int timer);
